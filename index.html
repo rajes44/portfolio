@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rajesh — Digital Marketing Enthusiast, Founder of Yazra Marketing, BSc CS AIML Student at Takshashila University. Explore my journey in social media marketing, branding & content creation." />
+  <title>Rajesh | Digital Marketing Enthusiast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== CANVAS: Stars & Galaxy ========== -->
+  <canvas id="spaceCanvas"></canvas>
+
+  <!-- ========== SPLASH OVERLAY ========== -->
+  <div id="splashOverlay"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="logoBtn">
+        <span class="logo-icon">✦</span>
+        <span>Yazra Marketing</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"       class="nav-link splash-btn" data-color="#a78bfa">Home</a></li>
+        <li><a href="#about"      class="nav-link splash-btn" data-color="#38bdf8">About</a></li>
+        <li><a href="#skills"     class="nav-link splash-btn" data-color="#34d399">Skills</a></li>
+        <li><a href="#hackathons" class="nav-link splash-btn" data-color="#f59e0b">Hackathons</a></li>
+        <li><a href="#yazra"      class="nav-link splash-btn" data-color="#f472b6">Yazra</a></li>
+        <li><a href="#contact"    class="nav-link splash-btn" data-color="#a78bfa">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="home" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-text">
+        <p class="hero-greeting">👋 Hello, I'm</p>
+        <h1 class="hero-name">
+          <span class="name-word gradient-text">Rajesh</span>
+        </h1>
+        <div class="hero-typewriter">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-desc">
+          A passionate Digital Marketing enthusiast & founder of <strong>Yazra Marketing</strong> — helping businesses build their online presence through creative branding, social media strategy, and impactful content creation. 🚀
+        </p>
+        <div class="hero-badge">
+          <span class="badge-pill" style="--bc:#a78bfa">🎓 BSc CS AIML</span>
+          <span class="badge-pill" style="--bc:#38bdf8">🏛️ Takshashila University</span>
+          <span class="badge-pill" style="--bc:#34d399">📍 Villupuram, TN</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#yazra" class="btn btn-primary splash-btn" data-color="#a78bfa" id="viewWorkBtn">
+            <span>Explore Yazra</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-outline splash-btn" data-color="#f472b6" id="hireMeBtn">
+            <span>Let's Collaborate</span>
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://instagram.com/yazra.marketing" target="_blank" class="social-icon splash-btn" data-color="#f472b6" title="Instagram @yazra.marketing" id="instaBtn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="mailto:yazramarketing.in@gmail.com" class="social-icon splash-btn" data-color="#a78bfa" title="Email" id="emailBtn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="#" class="social-icon splash-btn" data-color="#38bdf8" title="LinkedIn" id="linkedinBtn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+        <div class="orbit-ring ring-3"></div>
+        <div class="orbit-dot dot-1"></div>
+        <div class="orbit-dot dot-2"></div>
+        <div class="orbit-dot dot-3"></div>
+        <div class="hero-image-frame">
+          <img src="profile.png" alt="Rajesh — Digital Marketing Enthusiast" class="hero-image" id="profileImg" />
+          <div class="image-glow"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who Am <span class="gradient-text">I?</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card glass-card reveal">
+          <div class="about-icon">🎯</div>
+          <h3>Who I Am</h3>
+          <p>I'm <strong>Rajesh</strong>, a 1st year BSc CS AIML student at <strong>Takshashila University, Villupuram</strong>. I'm a digital marketing enthusiast with a passion for building brands and connecting businesses with their audiences online.</p>
+        </div>
+        <div class="about-card glass-card reveal">
+          <div class="about-icon">📈</div>
+          <h3>My Passion</h3>
+          <p>Digital Marketing, Social Media Strategy, Branding & Content Creation are my core interests. I love crafting stories that resonate and campaigns that convert — turning ideas into impactful online experiences.</p>
+        </div>
+        <div class="about-card glass-card reveal">
+          <div class="about-icon">🏆</div>
+          <h3>My Drive</h3>
+          <p>With <strong>7+ hackathons</strong> under my belt across national & international levels, I thrive under pressure. I bring the same competitive mindset and innovation to every marketing challenge I take on.</p>
+        </div>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-item">
+          <span class="stat-number" data-target="7">0</span><span class="stat-symbol">+</span>
+          <span class="stat-label">Hackathons</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="1">0</span><span class="stat-symbol">st</span>
+          <span class="stat-label">Year Student</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span><span class="stat-symbol">+</span>
+          <span class="stat-label">National Level</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="2">0</span><span class="stat-symbol">+</span>
+          <span class="stat-label">International</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <!-- Social Media & Marketing -->
+        <div class="skill-category glass-card reveal">
+          <h3 class="skill-cat-title">
+            <span class="skill-cat-icon">📱</span> Social Media Marketing
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-header"><span>Instagram Marketing</span><span>88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88" style="--color:#f472b6"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Content Strategy</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85" style="--color:#a78bfa"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Audience Engagement</span><span>82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82" style="--color:#38bdf8"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Brand Storytelling</span><span>80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80" style="--color:#f59e0b"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Branding & Content -->
+        <div class="skill-category glass-card reveal">
+          <h3 class="skill-cat-title">
+            <span class="skill-cat-icon">🎨</span> Branding & Content
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-header"><span>Brand Identity Design</span><span>78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78" style="--color:#34d399"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Canva & Design Tools</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85" style="--color:#f97316"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Copywriting</span><span>80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80" style="--color:#a78bfa"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Video Content Ideas</span><span>75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75" style="--color:#f472b6"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Strategy -->
+        <div class="skill-category glass-card reveal">
+          <h3 class="skill-cat-title">
+            <span class="skill-cat-icon">🚀</span> Digital Strategy & Tools
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-header"><span>SEO Basics</span><span>72%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="72" style="--color:#38bdf8"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Analytics & Insights</span><span>75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75" style="--color:#34d399"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Email Marketing</span><span>70%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="70" style="--color:#fbbf24"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Market Research</span><span>80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80" style="--color:#818cf8"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tool Tags -->
+      <div class="tech-tags reveal">
+        <span class="tech-tag" style="--tc:#f472b6">Instagram</span>
+        <span class="tech-tag" style="--tc:#38bdf8">LinkedIn</span>
+        <span class="tech-tag" style="--tc:#a78bfa">Canva</span>
+        <span class="tech-tag" style="--tc:#f59e0b">Meta Ads</span>
+        <span class="tech-tag" style="--tc:#34d399">Google Analytics</span>
+        <span class="tech-tag" style="--tc:#f97316">Content Creation</span>
+        <span class="tech-tag" style="--tc:#818cf8">Branding</span>
+        <span class="tech-tag" style="--tc:#38bdf8">SEO</span>
+        <span class="tech-tag" style="--tc:#f472b6">Reels / Shorts</span>
+        <span class="tech-tag" style="--tc:#fbbf24">Email Marketing</span>
+        <span class="tech-tag" style="--tc:#a78bfa">Copywriting</span>
+        <span class="tech-tag" style="--tc:#34d399">AI Tools</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HACKATHONS SECTION ========== -->
+  <section id="hackathons" class="section hackathons-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Achievements</span>
+        <h2 class="section-title">7+ <span class="gradient-text">Hackathons</span></h2>
+        <p class="section-sub">Competing at national & international levels, building innovative solutions under pressure</p>
+      </div>
+
+      <div class="hackathon-timeline">
+
+        <!-- Semester 1 -->
+        <div class="semester-label reveal">
+          <span class="sem-badge">📚 Semester 1</span>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack1">
+          <div class="hack-glow" style="--hc:#f59e0b"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#f59e0b">🇮🇳</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#f59e0b">National Level</span>
+              <span class="hack-mode online">Online</span>
+            </div>
+            <h3 class="hack-title">Smart India Hackathon 2025</h3>
+            <p class="hack-desc">Participated in India's largest hackathon platform organized by the Government of India, bringing innovative tech solutions to real-world national problems.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#f59e0b">SIH 2025</span>
+              <span class="htag" style="--htc:#38bdf8">Govt. of India</span>
+              <span class="htag" style="--htc:#34d399">Innovation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semester 2 -->
+        <div class="semester-label reveal">
+          <span class="sem-badge">📚 Semester 2</span>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack2">
+          <div class="hack-glow" style="--hc:#818cf8"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#818cf8">🌍</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#818cf8">International Level</span>
+              <span class="hack-mode online">Online</span>
+            </div>
+            <h3 class="hack-title">KPR Hackathon 360° 3.0</h3>
+            <p class="hack-desc">Competed across two rounds — Round 1 (January, Intermediate) and Round 2 (February, Semi-Final) — in this international hackathon, showcasing problem-solving and teamwork on a global stage.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#818cf8">International</span>
+              <span class="htag" style="--htc:#f472b6">Round 1 — Jan</span>
+              <span class="htag" style="--htc:#a78bfa">Round 2 — Feb</span>
+              <span class="htag" style="--htc:#38bdf8">Semi-Final</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack3">
+          <div class="hack-glow" style="--hc:#38bdf8"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#38bdf8">🆔</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#38bdf8">National Level</span>
+              <span class="hack-mode online">Online</span>
+            </div>
+            <h3 class="hack-title">UDAI Aadhaar Mapping Project 2026</h3>
+            <p class="hack-desc">Developed an innovative solution for Aadhaar-based identity mapping at a national level — addressing real governmental challenges in digital identity infrastructure.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#38bdf8">National</span>
+              <span class="htag" style="--htc:#34d399">UDAI</span>
+              <span class="htag" style="--htc:#f59e0b">GovTech</span>
+              <span class="htag" style="--htc:#a78bfa">2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack4">
+          <div class="hack-glow" style="--hc:#f472b6"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#f472b6">🏫</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#f472b6">Final Round</span>
+              <span class="hack-mode offline">Offline</span>
+            </div>
+            <h3 class="hack-title">CIT Hackathon — Hackerz 2026</h3>
+            <p class="hack-desc">Made it to the Final Round, competing offline at Chennai Institute of Technology. Demonstrated technical innovation and real-world application skills in a live competitive environment.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#f472b6">Final Round</span>
+              <span class="htag" style="--htc:#38bdf8">CIT Chennai</span>
+              <span class="htag" style="--htc:#34d399">Offline</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack5">
+          <div class="hack-glow" style="--hc:#34d399"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#34d399">🏆</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#34d399">National Level</span>
+              <span class="hack-mode offline">Offline</span>
+            </div>
+            <h3 class="hack-title">Createx 2026 Hackathon</h3>
+            <p class="hack-desc">Reached the Final Round at Marudhar Kesari Jain College, Tirupattur — a national-level hackathon challenging participants to create impactful and creative tech solutions.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#34d399">National</span>
+              <span class="htag" style="--htc:#f59e0b">Final Round</span>
+              <span class="htag" style="--htc:#a78bfa">Tirupattur</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack6">
+          <div class="hack-glow" style="--hc:#f97316"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#f97316">⏱️</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#f97316">24-Hour Sprint</span>
+              <span class="hack-mode offline">Offline</span>
+            </div>
+            <h3 class="hack-title">HackIndia 2026</h3>
+            <p class="hack-desc">A gruelling 24-hour offline hackathon at Mailam Engineering College — pushing the limits of creativity and endurance to build fully functional prototypes in one day.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#f97316">24 Hours</span>
+              <span class="htag" style="--htc:#38bdf8">Mailam</span>
+              <span class="htag" style="--htc:#34d399">Offline</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack7">
+          <div class="hack-glow" style="--hc:#a78bfa"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#a78bfa">🌠</div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#a78bfa">48-Hour Marathon</span>
+              <span class="hack-mode offline">Offline</span>
+            </div>
+            <h3 class="hack-title">Auristra 26 Hackathon</h3>
+            <p class="hack-desc">An epic 48-hour offline hackathon at <strong>Takshashila University College</strong> — my home ground! Pushed creativity and stamina to build, iterate, and present breakthrough solutions over two full days.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#a78bfa">48 Hours</span>
+              <span class="htag" style="--htc:#f472b6">Takshashila</span>
+              <span class="htag" style="--htc:#38bdf8">Offline</span>
+              <span class="htag" style="--htc:#34d399">2026</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /hackathon-timeline -->
+    </div>
+  </section>
+
+  <!-- ========== YAZRA MARKETING SECTION ========== -->
+  <section id="yazra" class="section yazra-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Brand</span>
+        <h2 class="section-title"><span class="gradient-text">Yazra</span> Marketing</h2>
+      </div>
+      <div class="yazra-grid">
+        <div class="yazra-intro glass-card reveal">
+          <div class="yazra-brand-logo">
+            <img src="yazra-logo.png" alt="Yazra Marketing Logo" class="yazra-logo-img" />
+          </div>
+          <div class="yazra-logo-wrap">
+            <span class="yazra-logo-icon">✦</span>
+            <span class="yazra-logo-text">Yazra Marketing</span>
+          </div>
+          <p class="yazra-tagline">"Creative & Impactful Digital Experiences"</p>
+          <p class="yazra-desc">
+            Yazra Marketing is a growing digital marketing brand focused on <strong>learning, creating, and helping businesses build their online presence</strong>. We are currently exploring social media marketing, branding, and content creation with the goal of delivering creative and impactful digital experiences in the future.
+          </p>
+          <div class="yazra-links">
+            <a href="https://instagram.com/yazra.marketing" target="_blank" class="yazra-link splash-btn" data-color="#f472b6" id="yazraInsta">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              @yazra.marketing
+            </a>
+            <a href="mailto:yazramarketing.in@gmail.com" class="yazra-link splash-btn" data-color="#a78bfa" id="yazraEmail">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              yazramarketing.in@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="yazra-pillars reveal">
+          <div class="pillar-card glass-card">
+            <div class="pillar-icon" style="--pic:#f472b6">📱</div>
+            <h4>Social Media Marketing</h4>
+            <p>Building brand presence across Instagram, LinkedIn, and more — with engaging posts, reels, and audience-first strategies.</p>
+          </div>
+          <div class="pillar-card glass-card">
+            <div class="pillar-icon" style="--pic:#a78bfa">🎨</div>
+            <h4>Branding</h4>
+            <p>Crafting unique visual identities and brand voices that make businesses memorable and consistent across all platforms.</p>
+          </div>
+          <div class="pillar-card glass-card">
+            <div class="pillar-icon" style="--pic:#34d399">✍️</div>
+            <h4>Content Creation</h4>
+            <p>Designing creative, high-quality content — from graphics and captions to video ideas — that tells your brand story.</p>
+          </div>
+          <div class="pillar-card glass-card">
+            <div class="pillar-icon" style="--pic:#f59e0b">📊</div>
+            <h4>Online Presence</h4>
+            <p>Helping businesses grow their digital footprint through strategic planning, consistent engagement, and data-driven insights.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-intro">Have a project in mind? Want to collaborate or just say hi? I'd love to hear from you. Let's build something amazing together! 🚀</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon" style="--cic:#a78bfa">📧</div>
+              <div>
+                <span class="ci-label">Email</span>
+                <a href="mailto:yazramarketing.in@gmail.com" class="ci-value">yazramarketing.in@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon" style="--cic:#f472b6">📸</div>
+              <div>
+                <span class="ci-label">Instagram</span>
+                <a href="https://instagram.com/yazra.marketing" target="_blank" class="ci-value">@yazra.marketing</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon" style="--cic:#38bdf8">📍</div>
+              <div>
+                <span class="ci-label">Location</span>
+                <span class="ci-value">Villupuram, Tamil Nadu 🇮🇳</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon" style="--cic:#34d399">🎓</div>
+              <div>
+                <span class="ci-label">Institution</span>
+                <span class="ci-value">Takshashila University</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon" style="--cic:#f59e0b">💼</div>
+              <div>
+                <span class="ci-label">Status</span>
+                <span class="ci-value available">Open to Collaborations</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://instagram.com/yazra.marketing" target="_blank" class="csocial splash-btn" data-color="#f472b6" id="contactInsta">📸 Instagram</a>
+            <a href="mailto:yazramarketing.in@gmail.com" class="csocial splash-btn" data-color="#a78bfa" id="contactEmail">📧 Email</a>
+            <a href="#" class="csocial splash-btn" data-color="#38bdf8" id="contactLinkedin">💼 LinkedIn</a>
+          </div>
+        </div>
+        <form class="contact-form glass-card reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="userName">Your Name</label>
+              <input type="text" id="userName" name="name" placeholder="Your Name" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="userEmail">Your Email</label>
+              <input type="email" id="userEmail" name="email" placeholder="you@example.com" autocomplete="email" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="userSubject">Subject</label>
+            <input type="text" id="userSubject" name="subject" placeholder="Collaboration Inquiry / Brand Partnership" />
+          </div>
+          <div class="form-group">
+            <label for="userMessage">Message</label>
+            <textarea id="userMessage" name="message" rows="5" placeholder="Tell me about your brand or project..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full splash-btn" data-color="#a78bfa" id="sendMsgBtn">
+            <span>Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <div class="form-success" id="formSuccess">
+            <span>🚀</span> Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">© 2026 <strong>Rajesh</strong> · Yazra Marketing · Crafted with <span class="heart">♥</span> among the stars.</p>
+        <a href="#home" class="back-to-top splash-btn" data-color="#a78bfa" id="backTopBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
